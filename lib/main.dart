@@ -1,6 +1,12 @@
+import 'package:bs_assignment/environment/build_config.dart';
+import 'package:bs_assignment/environment/environment.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load(fileName: Env.fileName);
+  Env.loadBuildConfig();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -105,8 +111,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Text(
+              'You have pushed the button this many times: ${BuildConfig.instance.flavor.name}',
             ),
             Text(
               '$_counter',

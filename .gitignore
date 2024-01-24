@@ -68,6 +68,8 @@ Thumbs.db
 /build/
 pubspec.lock
 .env
+.env.prod
+.env.stag
 
 # Android related
 **/android/**/gradle-wrapper.jar
