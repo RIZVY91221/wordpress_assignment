@@ -1,13 +1,33 @@
+import 'package:bs_assignment/core/values/sizeconfig.dart';
+import 'package:bs_assignment/di/injectable.dart';
 import 'package:bs_assignment/environment/build_config.dart';
 import 'package:bs_assignment/environment/environment.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:get/get.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
   await dotenv.load(fileName: Env.fileName);
   Env.loadBuildConfig();
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.landscapeLeft,
+  ]).then((_) async {
+    await initHiveStorage();
+    await configureDependencies();
+    runApp(const MyApp());
+  });
+}
+
+Future initHiveStorage() async {
+  final appDocumentDirectory = await getApplicationDocumentsDirectory();
+  return Hive.init(appDocumentDirectory.path);
 }
 
 class MyApp extends StatelessWidget {
@@ -16,28 +36,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return OrientationBuilder(
+          builder: (context, orientation) {
+            SizeConfig().init(constraints, orientation);
+            return getIt<GetMaterialApp>();
+          },
+        );
+      },
     );
   }
 }
