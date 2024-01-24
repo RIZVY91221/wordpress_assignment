@@ -61,6 +61,8 @@ dependencies:
   path_provider: ^2.1.1
   #Defines the annotations used by json_serializable
   json_annotation: ^4.8.1
+  #lazzy_loading_package
+  infinite_scroll_pagination: ^4.0.0
 
 
 dev_dependencies:

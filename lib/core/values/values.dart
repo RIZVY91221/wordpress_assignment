@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppValues {
   static const int defaultPageNumber = 1;
-  static const int defaultPageSize = 15;
+  static const int defaultPageSize = 10;
 }
 
 class AppMargin {
