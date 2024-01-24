@@ -24,3 +24,41 @@ To get a local copy up and running follow these steps.
 -   Kotlin version: 1.7.21
 -   Swift version: 5.9
 
+#### Installation
+
+1. Clone the repo
+    ```sh
+    ssh: git clone https://gitlab.com/rizvyahamed91221/bs_assignment.git
+    ```
+2. Environment Setup
+    - Create `.env` file cp `.env.example` to `.env `
+    - Can update flavor `DEV`,`PROD`,`STAGING`
+
+3. Install dependencies
+     ```sh
+    ssh: flutter pub get
+    ```
+4. Run
+    - Connect emulator or real device
+    - `flutter run`
+
+5. Start development!
+
+
+#### Available Scripts
+- In the project directory, you can run with using flavor:
+
+  `flutter build apk --dart-define=FLAVOR=PROD`
+
+- In project uses `inject` library, If face any conflict run this cmd :
+
+  `flutter packages pub run build_runner build --delete-conflicting-outputs`
+
+- or watch command in order to keep the source code synced automatically:
+
+  `flutter packages pub run build_runner watch`
+
+- In project create data model using terminal:
+
+  `flutter packages pub run build_runner build ` or if face any conflict run `flutter packages pub run build_runner build --delete-conflicting-outputs`
+
