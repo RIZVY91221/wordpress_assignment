@@ -39,6 +39,27 @@ dependencies:
   flutter_dotenv: ^5.1.0
   #check CONSOLE LOG
   logger: ^2.0.2+1
+  #api call
+  dio: ^5.4.0
+  #check data log
+  pretty_dio_logger: ^1.3.1
+  #custom_network_call
+  http: ^1.1.2
+  #state management package
+  get: ^4.6.6
+  #toast msg handle
+  fluttertoast: ^8.2.4
+  #key-value local database
+  hive: ^2.2.3
+  #inistant local data handler
+  shared_preferences: ^2.2.2
+  #Dipendency injector
+  injectable: ^2.3.2
+  #Dipendency service locator
+  get_it: ^7.6.4
+  #local data store path
+  path_provider: ^2.1.1
+
 
 dev_dependencies:
   flutter_test:
