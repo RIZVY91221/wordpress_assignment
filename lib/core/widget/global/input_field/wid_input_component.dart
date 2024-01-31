@@ -34,6 +34,7 @@ class WidgetInputComponent extends StatefulWidget {
     Key? key,
     required this.labelText,
     this.hints,
+    this.helpText,
     this.sideButtonText = 'Edit',
     this.sideButtonTextPressed = 'Save',
     this.sideButton,
@@ -51,6 +52,7 @@ class WidgetInputComponent extends StatefulWidget {
     this.padding = EdgeInsets.zero,
     this.innerPadding = EdgeInsets.zero,
     this.dataType = DataType.text,
+    this.isUploadField = false,
     this.includeExistingToDropDown = false,
     this.dropDownItems = const [],
     this.onTap,
@@ -63,6 +65,7 @@ class WidgetInputComponent extends StatefulWidget {
   final String? value;
   final String labelText;
   final String? hints;
+  final String? helpText;
   final String sideButtonText;
   final String sideButtonTextPressed;
   final Widget? sideButton;
@@ -78,6 +81,7 @@ class WidgetInputComponent extends StatefulWidget {
   final EdgeInsetsGeometry padding;
   final EdgeInsetsGeometry innerPadding;
   final DataType dataType;
+  final bool isUploadField;
   final TextInputType? inputType;
   final int? maxLength;
   final bool includeExistingToDropDown;
@@ -350,7 +354,7 @@ class _WidgetInputComponentState extends State<WidgetInputComponent> {
       case DataType.date:
         return widget.sideButton ?? _editSaveText(widget.sideButtonText);
       case DataType.tap:
-        return widget.sideButton ?? appSVG(Assets.svgLeftChevron);
+        return widget.isUploadField ? _editSaveText(widget.sideButtonText) : widget.sideButton ?? appSVG(Assets.svgLeftChevron);
     }
   }
 
