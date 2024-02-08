@@ -1,8 +1,8 @@
-import 'package:app_base_flutter/core/theme/colors.dart';
-import 'package:app_base_flutter/core/theme/text.dart';
-import 'package:app_base_flutter/core/values/values.dart';
-import 'package:app_base_flutter/core/widget/global/button/wid_button_static.dart';
-import 'package:app_base_flutter/core/widget/global/modal/base_modal.dart';
+import 'package:bs_assignment/core/theme/colors.dart';
+import 'package:bs_assignment/core/theme/text.dart';
+import 'package:bs_assignment/core/values/values.dart';
+import 'package:bs_assignment/core/widget/global/button/wid_button_static.dart';
+import 'package:bs_assignment/core/widget/global/modal/base_modal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

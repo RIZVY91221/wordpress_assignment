@@ -1,5 +1,5 @@
-import 'package:app_base_flutter/core/values/values.dart';
-import 'package:app_base_flutter/core/widget/global/divider/wid_divider.dart';
+import 'package:bs_assignment/core/values/values.dart';
+import 'package:bs_assignment/core/widget/global/divider/wid_divider.dart';
 import 'package:flutter/material.dart';
 
 class BaseCard extends StatelessWidget {

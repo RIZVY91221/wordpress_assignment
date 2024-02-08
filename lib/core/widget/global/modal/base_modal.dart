@@ -1,9 +1,9 @@
 import 'dart:ui';
 
-import 'package:app_base_flutter/core/enum.dart';
-import 'package:app_base_flutter/core/theme/colors.dart';
-import 'package:app_base_flutter/core/widget/global/button/wid_button_elevated.dart';
-import 'package:app_base_flutter/core/widget/global/divider/wid_divider.dart';
+import 'package:bs_assignment/core/enum.dart';
+import 'package:bs_assignment/core/theme/colors.dart';
+import 'package:bs_assignment/core/widget/global/button/wid_button_elevated.dart';
+import 'package:bs_assignment/core/widget/global/divider/wid_divider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
