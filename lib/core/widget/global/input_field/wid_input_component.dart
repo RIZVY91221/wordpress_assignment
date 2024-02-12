@@ -35,6 +35,10 @@ class WidgetInputComponent extends StatefulWidget {
     required this.labelText,
     this.hints,
     this.helpText,
+    this.errorText,
+    this.isError = false,
+    this.prefix,
+    this.prefixText,
     this.sideButtonText = 'Edit',
     this.sideButtonTextPressed = 'Save',
     this.sideButton,
@@ -58,6 +62,7 @@ class WidgetInputComponent extends StatefulWidget {
     this.onTap,
     this.focusNode,
     this.onEdit,
+    this.onChange,
     this.onFocusChange,
     this.inputType,
   }) : super(key: key);
@@ -66,6 +71,10 @@ class WidgetInputComponent extends StatefulWidget {
   final String labelText;
   final String? hints;
   final String? helpText;
+  final String? errorText;
+  final bool isError;
+  final Widget? prefix;
+  final String? prefixText;
   final String sideButtonText;
   final String sideButtonTextPressed;
   final Widget? sideButton;
@@ -89,6 +98,7 @@ class WidgetInputComponent extends StatefulWidget {
   final Function()? onTap;
   final FocusNode? focusNode;
   final Function(String title, String value)? onEdit;
+  final Function(String, TextEditingController)? onChange;
   final String? Function(bool?)? onFocusChange;
 
   @override
