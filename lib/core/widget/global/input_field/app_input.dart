@@ -391,6 +391,30 @@ class BaseRadioInput extends CustomItems {
         );
 }
 
+class BaseCheckboxInput extends CustomItems {
+  BaseCheckboxInput({
+    Key? key,
+    String? title = 'Check Button',
+    required String name,
+    required String value,
+    double? boxSize,
+    Color? disableColor,
+    Function(String)? onChangeItem,
+    Widget Function(bool)? titleChild,
+  }) : super(
+          key: key,
+          title: title,
+          name: name,
+          value: value,
+          isIconRequired: true,
+          boxSize: boxSize,
+          isCheckbox: true,
+          disableColor: disableColor,
+          onChangeItem: onChangeItem,
+          titleChild: titleChild,
+        );
+}
+
 class BaseRadioGroupInput extends WidgetCustomGroupInput {
   BaseRadioGroupInput({
     Key? key,
@@ -412,6 +436,31 @@ class BaseRadioGroupInput extends WidgetCustomGroupInput {
             boxSize: boxSize,
             disableColor: disableColor,
             isCheckbox: false,
+            isHorizontal: isHorizontal,
+            titleChild: titleChild,
+            disable: disable);
+}
+
+class BaseCheckboxGroupInput extends WidgetCustomGroupInput {
+  BaseCheckboxGroupInput({
+    Key? key,
+    required List<String> typeList,
+    Function(String)? onChangeValue,
+    required String initialValue,
+    double? boxSize,
+    Color? disableColor,
+    bool isHorizontal = false,
+    Widget Function(bool)? titleChild,
+    List<String>? disable,
+  }) : super(
+            key: key,
+            initialValue: initialValue,
+            typeList: typeList,
+            onChangeValue: onChangeValue,
+            isIconRequired: true,
+            boxSize: boxSize,
+            disableColor: disableColor,
+            isCheckbox: true,
             isHorizontal: isHorizontal,
             titleChild: titleChild,
             disable: disable);
