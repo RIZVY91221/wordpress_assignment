@@ -2,6 +2,6 @@
 class Assets {
   Assets._();
 
-  static const String bsAssignment = '.env';
-  static const String iconsGitIcon = 'assets/icons/git_icon.png';
+  static const String iconsDokanLogo = 'assets/icons/dokan_logo.png';
+  static const String wordpressAssignment = '.env';
 }

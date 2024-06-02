@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AppColor {
-  static Color get primaryOne4B9EFF => const Color(0xFF4B9EFF);
+  static Color get primaryOne4B9EFF => const Color(0xFFF75F55); //background: #F75F55;
   static Color get primaryTwo10CCE4 => const Color(0xFF10CCE4);
 
-  static Color get primaryToneOneEAF4FF => const Color(0xFFEAF4FF); //#202125
-  static Color get primaryToneTwoE6F7F9 => const Color(0xFFE6F7F9);
+  static Color get primaryToneOneEAF4FF => const Color(0xFFffcbc9); //#202125
+  static Color get primaryToneTwoE6F7F9 => const Color(0xFFffb3b0);
 
   static Color get secondaryOne354170 => const Color(0xFF354170);
   static Color get secondaryTwoFFD584 => const Color(0xFFFFD584);

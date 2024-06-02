@@ -1,4 +1,4 @@
-import 'package:bs_assignment/features/repo/presentation/screen_repository_list.dart';
+import 'package:bs_assignment/features/auth/presentation/screen_repository_list.dart';
 import 'package:bs_assignment/features/splash/binding/splash_binding.dart';
 import 'package:bs_assignment/features/splash/presentation/splash_screen.dart';
 import 'package:bs_assignment/main.dart';

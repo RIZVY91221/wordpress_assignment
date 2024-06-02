@@ -23,7 +23,7 @@ class SplashScreen extends GetWidget {
               Expanded(
                 child: Center(
                   child: Image.asset(
-                    Assets.iconsGitIcon,
+                    Assets.iconsDokanLogo,
                     width: Get.width / 2,
                   ),
                 ),
