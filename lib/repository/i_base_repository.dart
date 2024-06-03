@@ -34,4 +34,9 @@ class ImplementBaseRepository implements BaseRepository {
   Future<LoginResponse> postLogin(String email, String password) async {
     return await _remoteDataSource.postLogin(email, password).catchError((onError) => throw onError);
   }
+
+  @override
+  Future<Map<String, dynamic>> postSignup(Map<String, dynamic> data) async {
+    return await _remoteDataSource.postSignup(data);
+  }
 }

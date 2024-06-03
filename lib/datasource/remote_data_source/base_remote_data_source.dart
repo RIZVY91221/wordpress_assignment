@@ -11,4 +11,5 @@ abstract class BaseRemoteDataSource {
       ImplementBaseRemoteDataSource(dioClient, restClient);
 
   Future<LoginResponse> postLogin(String email, String password);
+  Future<Map<String, dynamic>> postSignup(Map<String, dynamic> data);
 }

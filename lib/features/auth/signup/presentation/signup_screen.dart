@@ -37,13 +37,13 @@ class SignupScreen extends BaseView<SignUpController> {
         children: [
           _circleCard(),
           AppGap.vertical20,
-          _inputComponent(hints: "Name", icon: Icons.person_2_outlined),
-          _inputComponent(hints: "Email", icon: Icons.email_outlined),
-          _inputComponent(hints: "Password", icon: Icons.lock_outline),
-          _inputComponent(hints: "Confirm Password", icon: Icons.lock_outline),
+          _inputComponent(hints: "Name", icon: Icons.person_2_outlined, controller: controller.usernameController),
+          _inputComponent(hints: "Email", icon: Icons.email_outlined, controller: controller.emailController),
+          _inputComponent(hints: "Password", icon: Icons.lock_outline, controller: controller.passwordController),
+          _inputComponent(hints: "Confirm Password", icon: Icons.lock_outline, controller: controller.confirmPasswordController),
           AppGap.vertical20,
           DefaultPrimaryButton(
-            onPressed: () {},
+            onPressed: () async => controller.signUp(),
             disable: false,
             buttonRound: ButtonRound.halfRounded,
             child: Text("Sign Up", style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: AppColor.whiteFFFFFF)),

@@ -19,4 +19,5 @@ class Endpoints {
   //TODO: Add other settings and url endpoint here
 
   static const String POST_LOGIN = "wp-json/jwt-auth/v1/token";
+  static const String POST_SIGNUP = "wp-json/wp/v2/users/register";
 }

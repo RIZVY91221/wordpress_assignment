@@ -15,7 +15,7 @@ class SplashController extends GetxController {
   void onInit() async {
     await repository.initBoxes(HiveConstants.INIT_BOXS);
     Timer(const Duration(milliseconds: 400), () async {
-      if (repository.accessToken.isNotEmpty) {
+      if (!repository.accessToken.isNotEmpty) {
         //Todo: need to add route here.....
         Get.offAll(const BlankScreen());
       } else {

@@ -28,4 +28,14 @@ class ImplementBaseRemoteDataSource extends BaseRemoteDataSource {
       rethrow;
     }
   }
+
+  @override
+  Future<Map<String, dynamic>> postSignup(Map<String, dynamic> data) async {
+    try {
+      final res = await _dioClient.post(Endpoints.POST_SIGNUP, data: data);
+      return res;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

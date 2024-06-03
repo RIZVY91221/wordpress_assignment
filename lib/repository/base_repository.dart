@@ -24,4 +24,5 @@ abstract class BaseRepository {
   Future<void> setAccessToken(String accessToken);
 
   Future<LoginResponse> postLogin(String email, String password);
+  Future<Map<String, dynamic>> postSignup(Map<String, dynamic> data);
 }
