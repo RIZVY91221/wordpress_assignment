@@ -25,6 +25,7 @@ class AppColor {
   static Color get whiteLightGrayE4E5E6 => const Color(0xFFe4e5e6);
   static Color get whiteLightestGrayF8F8F8 => const Color(0xFFf8f8f8);
   static Color get whiteFFFFFF => const Color(0xFFFFFFFF);
+  static Color get scaffoldColor => const Color(0xFFF8F8F8);
 
   static Color get errorFE6C44 => const Color(0xFFFE6C44);
   static Color get dangerFE6C44 => const Color(0xFFFE6C44);

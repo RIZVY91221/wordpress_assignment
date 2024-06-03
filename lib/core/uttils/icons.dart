@@ -45,7 +45,7 @@ class AppIcon {
         padding: EdgeInsets.only(top: top),
         child: Center(
           child: appSVG(
-            Assets.svgNoData,
+            Assets.imagesNoImage,
             height: 80,
             width: 80,
           ),

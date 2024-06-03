@@ -31,6 +31,14 @@ class Env {
     return apiUrlDartCommand.isNotEmpty ? apiUrlDartCommand : dotenv.env["BASE_URL"] ?? "NOT FOUND";
   }
 
+  static String get loginEmail {
+    return dotenv.env["LOGIN_EMAIL"] ?? "NOT FOUND";
+  }
+
+  static String get loginPassword {
+    return dotenv.env["LOGIN_PASSWORD"] ?? "NOT FOUND";
+  }
+
   static Flavor get currentFlavor {
     Flavor flavor;
     switch (fileName) {
