@@ -2,6 +2,7 @@ import 'package:bs_assignment/core/base/base_controller.dart';
 import 'package:bs_assignment/core/theme/colors.dart';
 import 'package:bs_assignment/core/values/app_string.dart';
 import 'package:bs_assignment/environment/environment.dart';
+import 'package:bs_assignment/features/blank_screen.dart';
 import 'package:bs_assignment/repository/base_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -77,15 +78,14 @@ class LoginController extends BaseController {
     // making 'errorMessageColor' null as it is changed at 'afterVerification()'
     if (errorMessageColor != null) errorMessageColor = null;
 
-    /* */ /* Sending Login POST request */ /*
-    repository.postLogin(emailTextEditingController.text, passwordTextEditingController.text).then((response) async {
-      if (response.token != null && response.verified == true) {
+    //Sending Login POST request
+    await repository.postLogin(emailTextEditingController.text, passwordTextEditingController.text).then((response) async {
+      if (response.token != null) {
         await repository.setAccessToken(response.token ?? '');
-        await repository.setUserId(response.meta?.syncState?.userId ?? 0);
         //TODO: Add route page here :example
-        Get.offAll(const BlankPage());
+        Get.offAll(const BlankScreen());
       }
-    });*/
+    });
   }
 
   /// <span style="color:orange">Logout</span>
