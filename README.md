@@ -1,4 +1,36 @@
-# bs_assignment
+## APK DOWNLOAD
+
+[APK](https://github.com/RIZVY91221/wordpress_assignment/blob/main/file/app-release.apk?raw=true)
+
+## SCREEN
+[SCREEN1](https://github.com/RIZVY91221/wordpress_assignment/blob/main/file/image/Screen1.jpg?raw=true)
+[SCREEN2](https://github.com/RIZVY91221/wordpress_assignment/blob/main/file/image/Screen2.jpg?raw=true)
+[SCREEN3](https://github.com/RIZVY91221/wordpress_assignment/blob/main/file/image/Screen3.jpg?raw=true)
+[SCREEN4](https://github.com/RIZVY91221/wordpress_assignment/blob/main/file/image/Screen4.jpg?raw=true)
+[SCREEN5](https://github.com/RIZVY91221/wordpress_assignment/blob/main/file/image/Screen5.jpg?raw=true)
+
+<table>
+  <tr>
+    <td>Login</td>
+     <td>Home</td>
+     <td>Filter</td>
+     <td>MyAccount</td>
+     <td>Splash</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/RIZVY91221/wordpress_assignment/blob/main/file/image/Screen1.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/RIZVY91221/wordpress_assignment/blob/main/file/image/Screen2.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/RIZVY91221/wordpress_assignment/blob/main/file/image/Screen3.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/RIZVY91221/wordpress_assignment/blob/main/file/image/Screen4.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/RIZVY91221/wordpress_assignment/blob/main/file/image/Screen5.jpg?raw=true" width=270 height=480></td>
+  </tr>
+ </table>
+
+
+[![Watch the video](https://asciinema.org/a/113463.png)](https://drive.google.com/file/d/1Ecp2_91MSGvuerWs7LBBnwGCMfx6YKs0/view)
+
+
+# assignment
 
 A new Flutter project.
 
@@ -15,7 +47,7 @@ Additional Package Used
 
 ## Getting Started
 This project is a starting point for a Flutter application.
-[Repository link](https://gitlab.com/rizvyahamed91221/bs_assignment.git)
+[Repository link](https://github.com/RIZVY91221/wordpress_assignment.git)
 <br>
 To get a local copy up and running follow these steps.
 #### Prerequisites
@@ -28,7 +60,7 @@ To get a local copy up and running follow these steps.
 
 1. Clone the repo
     ```sh
-    ssh: git clone https://gitlab.com/rizvyahamed91221/bs_assignment.git
+    ssh: git clone https://github.com/RIZVY91221/wordpress_assignment.git
     ```
 2. Environment Setup
     - Create `.env` file cp `.env.example` to `.env `
