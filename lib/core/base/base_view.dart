@@ -58,6 +58,8 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
           drawer: drawer(context),
           backgroundColor: pageBackgroundColor(),
           bottomNavigationBar: bottomNavigationBar(),
+          floatingActionButton: floatingActionButton(),
+          floatingActionButtonLocation: floatingActionButtonLocation(),
           body: SafeArea(
             child: Center(
               widthFactor: widthFactorCenter(),
@@ -112,6 +114,10 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
   Color statusBarColor() {
     //Todo
     return Colors.white;
+  }
+
+  FloatingActionButtonLocation floatingActionButtonLocation() {
+    return FloatingActionButtonLocation.centerDocked;
   }
 
   Widget? floatingActionButton() {

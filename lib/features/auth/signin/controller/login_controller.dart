@@ -2,8 +2,8 @@ import 'package:bs_assignment/core/base/base_controller.dart';
 import 'package:bs_assignment/core/theme/colors.dart';
 import 'package:bs_assignment/core/values/app_string.dart';
 import 'package:bs_assignment/environment/environment.dart';
-import 'package:bs_assignment/features/blank_screen.dart';
 import 'package:bs_assignment/repository/base_repository.dart';
+import 'package:bs_assignment/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
@@ -83,7 +83,7 @@ class LoginController extends BaseController {
       if (response.token != null) {
         await repository.setAccessToken(response.token ?? '');
         //TODO: Add route page here :example
-        Get.offAll(const BlankScreen());
+        Get.offAllNamed(AppRoutes.HOME_SCREEN);
       }
     });
   }
