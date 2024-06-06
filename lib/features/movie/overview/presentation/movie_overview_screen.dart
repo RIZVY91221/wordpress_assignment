@@ -1,6 +1,5 @@
 import 'package:bs_assignment/core/base/base_view.dart';
 import 'package:bs_assignment/core/theme/text.dart';
-import 'package:bs_assignment/core/widget/global/input_field/wid_text_field.dart';
 import 'package:bs_assignment/features/movie/overview/controller/movie_overview_controller.dart';
 import 'package:flutter/material.dart';
 

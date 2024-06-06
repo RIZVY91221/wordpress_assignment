@@ -1,9 +1,7 @@
-import 'package:bs_assignment/features/auth/presentation/screen_repository_list.dart';
 import 'package:bs_assignment/features/movie/overview/bindings/movie_overview_bindings.dart';
 import 'package:bs_assignment/features/movie/overview/presentation/movie_overview_screen.dart';
 import 'package:bs_assignment/features/splash/binding/splash_binding.dart';
 import 'package:bs_assignment/features/splash/presentation/splash_screen.dart';
-import 'package:bs_assignment/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

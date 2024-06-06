@@ -22,8 +22,13 @@ class SplashScreen extends GetWidget {
           child: Column(
             children: [
               Expanded(
-                child: Center(child: appSVG(Assets.svgIcon, size: MediaQuery.of(context).size.width / 2)),
-              ),
+                child: Center(
+                  child: Image.asset(
+                    Assets.iconsFlutterIcon,
+                    width: MediaQuery.of(context).size.width / 2,
+                  ),
+                ),
+              )
             ],
           ),
         ),
