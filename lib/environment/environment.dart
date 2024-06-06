@@ -11,9 +11,9 @@ class Env {
     if (kDebugMode) {
       return '.env';
     } else if (kProfileMode) {
-      return '.env.prod';
+      return '.env';
     } else if (kReleaseMode) {
-      return '.env.stag';
+      return '.env';
     } else {
       return '.env';
     }

@@ -27,7 +27,7 @@ class SignUpController extends BaseController {
           "password": passwordController.text
         };
         await callDataService(repository.postSignup(data), onSuccess: (v) {
-          AppToasts.defaultBanner(msg: v["message"], backgroundColor: AppColor.primaryToneOneEAF4FF);
+          AppToasts.defaultBanner(msg: v["message"], backgroundColor: AppColor.secondaryToneTwoFFF6E5);
           Get.back();
         });
       } else {

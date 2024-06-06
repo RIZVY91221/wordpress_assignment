@@ -10,6 +10,9 @@ abstract class BaseLocalDataSource {
   Future initBoxes(List<String> boxs);
   String get accessToken;
   Future<void> setAccessToken(String accessToken);
+  Future<void> logout();
+  String get currentUserId;
+  Future<void> setCurrentUserId(String userId);
   LoginResponse get userDefault;
   Future<void> setUserDefault(LoginResponse userDefault);
 }

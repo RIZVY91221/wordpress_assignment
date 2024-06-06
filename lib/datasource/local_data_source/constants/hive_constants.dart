@@ -21,4 +21,5 @@ class Session {
   String get SESSION_AUTH_BOX => "SESSION_AUTH_BOX";
   String get ACCESS_TOKEN => "ACCESS_TOKEN";
   String get USER_DEFAULT => "USER_DEFAULT";
+  String get USER_ID => "USER_ID";
 }

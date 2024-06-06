@@ -45,4 +45,35 @@ class ImplementBaseRepository implements BaseRepository {
   Future<List<ProductResource>> getProductList(String filterBy) async {
     return await _remoteDataSource.getProductList(filterBy);
   }
+
+  @override
+  Future<void> logout() {
+    return _localDataSource.logout();
+  }
+
+  @override
+  String get currentUserId => _localDataSource.currentUserId;
+
+  @override
+  Future<void> setCurrentUserId(String userId) async {
+    return await _localDataSource.setCurrentUserId(userId);
+  }
+
+  @override
+  Future<void> setUserDefault(LoginResponse userDefault) async {
+    return await _localDataSource.setUserDefault(userDefault);
+  }
+
+  @override
+  LoginResponse get userDefault => _localDataSource.userDefault;
+
+  @override
+  Future<Map<String, dynamic>> getUserDetails() async {
+    return await _remoteDataSource.getUserDetails();
+  }
+
+  @override
+  Future<Map<String, dynamic>> updateUser(String id, Map<String, dynamic> data) async {
+    return await _remoteDataSource.updateUser(id, data);
+  }
 }

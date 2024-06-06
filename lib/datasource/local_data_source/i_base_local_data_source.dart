@@ -39,4 +39,23 @@ class ImplementBaseLocalDataSource implements BaseLocalDataSource {
     var box = Hive.box(HiveConstants.SESSIONS.SESSION_AUTH_BOX);
     return box.get(HiveConstants.SESSIONS.USER_DEFAULT, defaultValue: '');
   }
+
+  @override
+  String get currentUserId {
+    var box = Hive.box(HiveConstants.SESSIONS.SESSION_AUTH_BOX);
+    return box.get(HiveConstants.SESSIONS.USER_ID, defaultValue: "");
+  }
+
+  @override
+  Future<void> setCurrentUserId(String userId) {
+    var box = Hive.box(HiveConstants.SESSIONS.SESSION_AUTH_BOX);
+    return box.put(HiveConstants.SESSIONS.USER_ID, userId);
+  }
+
+  @override
+  Future<void> logout() async {
+    var box = Hive.box(HiveConstants.SESSIONS.SESSION_AUTH_BOX);
+    var boxConfig = Hive.box(HiveConstants.CONFIGS.CONFIG_BOX);
+    return box.delete(HiveConstants.SESSIONS.ACCESS_TOKEN);
+  }
 }

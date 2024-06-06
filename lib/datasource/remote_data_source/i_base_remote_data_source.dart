@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:bs_assignment/core/network/dio_client.dart';
 import 'package:bs_assignment/core/network/rest_client.dart';
@@ -73,6 +72,26 @@ class ImplementBaseRemoteDataSource extends BaseRemoteDataSource {
         }
       }
       return resource;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<Map<String, dynamic>> getUserDetails() async {
+    try {
+      final res = await _dioClient.get(Endpoints.USER_DETAILS);
+      return res;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<Map<String, dynamic>> updateUser(String id, Map<String, dynamic> data) async {
+    try {
+      final res = await _dioClient.post("${Endpoints.UPDATE_USER}/$id", data: data);
+      return res;
     } catch (e) {
       rethrow;
     }

@@ -33,6 +33,9 @@ abstract class NetworkModule {
       }
       ..interceptors.add(
         InterceptorsWrapper(onRequest: (RequestOptions options, RequestInterceptorHandler handler) async {
+          if (baseLocalDataSource.accessToken != "") {
+            options.headers.putIfAbsent("Authorization", () => "Bearer ${baseLocalDataSource.accessToken}");
+          }
           handler.next(options);
         }, onError: (DioException e, ErrorInterceptorHandler handler) async {
           switch (e.type) {

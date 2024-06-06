@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 
 AppBar baseAppBar({
   String title = '',
+  Widget? titleWidget,
   Color? titleColor,
   bool modalView = false,
   bool titleCenter = true,
@@ -23,7 +24,7 @@ AppBar baseAppBar({
   VoidCallback? onPressedLeading,
 }) {
   return AppBar(
-    title: AppText.headline5(title, color: titleColor ?? AppColor.whiteFFFFFF),
+    title: titleWidget ?? AppText.headline5(title, color: titleColor ?? AppColor.whiteFFFFFF),
     titleSpacing: 0,
     elevation: 0.0,
     leading: leadingArrow

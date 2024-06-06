@@ -14,5 +14,8 @@ abstract class BaseRemoteDataSource {
   Future<LoginResponse> postLogin(String email, String password);
   Future<Map<String, dynamic>> postSignup(Map<String, dynamic> data);
 
+  Future<Map<String, dynamic>> getUserDetails();
+  Future<Map<String, dynamic>> updateUser(String id,Map<String, dynamic> data);
+
   Future<List<ProductResource>> getProductList(String filterBy);
 }

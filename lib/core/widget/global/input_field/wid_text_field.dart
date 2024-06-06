@@ -139,7 +139,9 @@ class _AppInputTextState extends State<AppInputText> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 5,
+      surfaceTintColor: AppColor.scaffoldColor,
+      color: AppColor.scaffoldColor,
+      elevation: widget.elevation,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,

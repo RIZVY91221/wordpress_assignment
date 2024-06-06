@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:bs_assignment/core/base/base_view.dart';
 import 'package:bs_assignment/core/enum.dart';
 import 'package:bs_assignment/core/theme/colors.dart';
@@ -11,6 +13,7 @@ import 'package:bs_assignment/core/widget/global/pagination/pagging_view.dart';
 import 'package:bs_assignment/core/widget/global/sidebar/wid_appbar.dart';
 import 'package:bs_assignment/core/widget/user/fab_bottom_app_bar.dart';
 import 'package:bs_assignment/features/home/controller/home_controller.dart';
+import 'package:bs_assignment/features/home/presentation/acount_screen.dart';
 import 'package:bs_assignment/generated/assets.dart';
 import 'package:bs_assignment/models/product/product_resource.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +25,11 @@ class HomeScreen extends BaseView<HomeController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return baseAppBar(
-        title: "Product List", backgroundColor: AppColor.scaffoldColor, titleColor: AppColor.dark202125, showBorderBottom: false);
+        titleWidget: Obx(() => appBarTitle()), //Obx(() => ),
+        title: "Product List",
+        backgroundColor: AppColor.scaffoldColor,
+        titleColor: AppColor.dark202125,
+        showBorderBottom: false);
   }
 
   @override
@@ -32,28 +39,50 @@ class HomeScreen extends BaseView<HomeController> {
 
   @override
   Widget body(BuildContext context) {
-    return Column(
-      children: [
-        AppGap.vertical15,
-        widFilterBar(
-            onPressShortBy: () => Get.bottomSheet(
-                  widBottomSheet(),
-                  elevation: 5,
-                  backgroundColor: AppColor.whiteFFFFFF,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(10.0)),
-                  ),
-                )),
-        Expanded(
-            child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
-          child: PagingView<ProductResource>(
-              isGridView: true,
-              pagingController: controller.paginationController.pagingController,
-              itemBuilder: (context, item, i) => ProductCard(productResource: item)),
-        ))
-      ],
-    );
+    return Obx(() => pageView());
+  }
+
+  Widget pageView() {
+    if (controller.selectedTab.value == 0) {
+      return Column(
+        children: [
+          AppGap.vertical15,
+          widFilterBar(
+              onPressShortBy: () => Get.bottomSheet(
+                    widBottomSheet(),
+                    elevation: 5,
+                    backgroundColor: AppColor.whiteFFFFFF,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(10.0)),
+                    ),
+                  )),
+          Expanded(
+              child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
+            child: PagingView<ProductResource>(
+                isGridView: true,
+                pagingController: controller.paginationController.pagingController,
+                itemBuilder: (context, item, i) => ProductCard(productResource: item)),
+          ))
+        ],
+      );
+    } else if (controller.selectedTab.value == 3) {
+      return AccountScreen();
+    } else {
+      return Center(
+        child: AppText.headline5("InProgress"),
+      );
+    }
+  }
+
+  Widget appBarTitle() {
+    if (controller.selectedTab.value == 0) {
+      return AppText.headline5("ProductList", color: AppColor.dark202125);
+    } else if (controller.selectedTab.value == 3) {
+      return AppText.headline5("My Account", color: AppColor.dark202125);
+    } else {
+      return AppText.headline5("Dashboard", color: AppColor.dark202125);
+    }
   }
 
   @override
@@ -64,9 +93,7 @@ class HomeScreen extends BaseView<HomeController> {
       selectedColor: AppColor.primaryOne4B9EFF,
       height: 52,
       notchedShape: const CircularNotchedRectangle(),
-      onTabSelected: (v) {
-        debugPrint('$v');
-      },
+      onTabSelected: (v) => controller.selectedTab.value = v,
       items: [
         FABBottomAppBarItem(
           iconData: Icons.home_outlined,
@@ -86,17 +113,19 @@ class HomeScreen extends BaseView<HomeController> {
 
   @override
   Widget? floatingActionButton() {
-    return FloatingActionButton(
-      backgroundColor: AppColor.primaryOne4B9EFF,
-      shape: const CircleBorder(),
-      onPressed: () {},
-      tooltip: 'Increment',
-      elevation: 2.0,
-      child: Icon(
-        Icons.search_outlined,
-        color: AppColor.whiteFFFFFF,
-      ),
-    ); // This trailing comma makes auto-formatting nicer for build methods.
+    return Visibility(
+        visible: MediaQuery.of(Get.context!).viewInsets.bottom == 0.0,
+        child: FloatingActionButton(
+          backgroundColor: AppColor.primaryOne4B9EFF,
+          shape: const CircleBorder(),
+          onPressed: () {},
+          tooltip: 'Increment',
+          elevation: 2.0,
+          child: Icon(
+            Icons.search_outlined,
+            color: AppColor.whiteFFFFFF,
+          ),
+        )); // This trailing comma makes auto-formatting nicer for build methods.
   }
 
   @override

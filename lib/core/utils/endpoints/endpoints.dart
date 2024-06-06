@@ -20,4 +20,7 @@ class Endpoints {
 
   static const String POST_LOGIN = "wp-json/jwt-auth/v1/token";
   static const String POST_SIGNUP = "wp-json/wp/v2/users/register";
+
+  static const String USER_DETAILS = "wp-json/wp/v2/users/me";
+  static const String UPDATE_USER = "wp-json/wp/v2/users/";
 }
