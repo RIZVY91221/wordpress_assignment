@@ -42,7 +42,7 @@ class ImplementBaseRepository implements BaseRepository {
   }
 
   @override
-  Future<List<ProductResource>> getProductList() async {
-    return await _remoteDataSource.getProductList();
+  Future<List<ProductResource>> getProductList(String filterBy) async {
+    return await _remoteDataSource.getProductList(filterBy);
   }
 }

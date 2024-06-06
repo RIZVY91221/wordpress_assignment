@@ -27,5 +27,5 @@ abstract class BaseRepository {
   Future<LoginResponse> postLogin(String email, String password);
   Future<Map<String, dynamic>> postSignup(Map<String, dynamic> data);
 
-  Future<List<ProductResource>> getProductList();
+  Future<List<ProductResource>> getProductList(String filterBy);
 }

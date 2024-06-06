@@ -125,7 +125,7 @@ class HomeScreen extends BaseView<HomeController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    children: [appSVG(Assets.svgFilter), AppText.bodyVerySmall("Filter")],
+                    children: [appSVG(Assets.svgFilter), AppGap.horizontal8, AppText.bodyVerySmall("Filter")],
                   ),
                   Row(
                     children: [
@@ -160,10 +160,17 @@ class HomeScreen extends BaseView<HomeController> {
               AppGap.vertical20,
               AppText.headline5("Filter"),
               AppGap.vertical30,
-              BaseCheckboxGroupInput(
-                typeList: const ["Newest", "Oldest", "Price low > high", "Price high > low"],
-                initialValue: "",
-                disableColor: AppColor.darkLight4D4D50,
+              Obx(
+                () => BaseCheckboxGroupInput(
+                  typeList: const ["Newest", "Oldest", "Price low > high", "Price high > low"],
+                  initialValue: controller.selectFilter.value,
+                  disableColor: AppColor.darkLight4D4D50,
+                  onChangeValue: (value) {
+                    debugPrint(value);
+                    controller.selectFilter.value = value;
+                    debugPrint(controller.selectFilter.value);
+                  },
+                ),
               ),
               AppGap.vertical20,
               Row(
@@ -180,7 +187,7 @@ class HomeScreen extends BaseView<HomeController> {
                     text: "Apply",
                     buttonSize: ButtonSize.auto,
                     buttonRound: ButtonRound.microRound,
-                    onPressed: () {},
+                    onPressed: () => controller.onApplyFilter(),
                   )
                 ],
               )

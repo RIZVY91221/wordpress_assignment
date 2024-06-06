@@ -46,12 +46,33 @@ class ImplementBaseRemoteDataSource extends BaseRemoteDataSource {
   }
 
   @override
-  Future<List<ProductResource>> getProductList() {
+  Future<List<ProductResource>> getProductList(String filterBy) async {
     try {
-      return rootBundle.loadString(Assets.productResponse).then((jsonStr) {
-        var res = json.decode(jsonStr) as List<dynamic>;
-        return res.map((x) => ProductResource.fromJson(x)).toList();
-      });
+      // Load JSON string from assets
+      List<dynamic> res = [];
+      await rootBundle.loadString(Assets.assetsProductResponse).then((value) async => res = await json.decode(value) as List<dynamic>);
+      // Sort and filter the list based on the filterBy parameter
+      List<ProductResource> resource = res.map((x) => ProductResource.fromJson(x)).toList();
+
+      if (filterBy.isNotEmpty) {
+        switch (filterBy) {
+          case "Newest":
+            resource.sort((a, b) => DateTime.parse(b.product?.dateCreated ?? '').compareTo(DateTime.parse(a.product?.dateCreated ?? '')));
+            break;
+          case "Oldest":
+            resource.sort((a, b) => DateTime.parse(a.product?.dateCreated ?? '').compareTo(DateTime.parse(b.product?.dateCreated ?? '')));
+            break;
+          case "Price low > high":
+            resource.sort((a, b) => int.parse(a.product?.price ?? '0').compareTo(int.parse(b.product?.price ?? '0')));
+            break;
+          case "Price high > low":
+            resource.sort((a, b) => int.parse(b.product?.price ?? '0').compareTo(int.parse(a.product?.price ?? '0')));
+            break;
+          default:
+            break;
+        }
+      }
+      return resource;
     } catch (e) {
       rethrow;
     }
