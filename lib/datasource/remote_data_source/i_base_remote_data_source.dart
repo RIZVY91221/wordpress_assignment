@@ -1,8 +1,14 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:bs_assignment/core/network/dio_client.dart';
 import 'package:bs_assignment/core/network/rest_client.dart';
 import 'package:bs_assignment/core/utils/endpoints/endpoints.dart';
 import 'package:bs_assignment/datasource/remote_data_source/base_remote_data_source.dart';
+import 'package:bs_assignment/generated/assets.dart';
 import 'package:bs_assignment/models/auth/login_response.dart';
+import 'package:bs_assignment/models/product/product_resource.dart';
+import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
@@ -34,6 +40,18 @@ class ImplementBaseRemoteDataSource extends BaseRemoteDataSource {
     try {
       final res = await _dioClient.post(Endpoints.POST_SIGNUP, data: data);
       return res;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<List<ProductResource>> getProductList() {
+    try {
+      return rootBundle.loadString(Assets.productResponse).then((jsonStr) {
+        var res = json.decode(jsonStr) as List<dynamic>;
+        return res.map((x) => ProductResource.fromJson(x)).toList();
+      });
     } catch (e) {
       rethrow;
     }
