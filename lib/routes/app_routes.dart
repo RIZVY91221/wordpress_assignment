@@ -1,4 +1,6 @@
 import 'package:bs_assignment/features/auth/presentation/screen_repository_list.dart';
+import 'package:bs_assignment/features/movie/overview/bindings/movie_overview_bindings.dart';
+import 'package:bs_assignment/features/movie/overview/presentation/movie_overview_screen.dart';
 import 'package:bs_assignment/features/splash/binding/splash_binding.dart';
 import 'package:bs_assignment/features/splash/presentation/splash_screen.dart';
 import 'package:bs_assignment/main.dart';
@@ -10,11 +12,11 @@ class AppRoutes {
 
   //static variables
   static const String INITINAL = '/';
-  static const String REPO_LIST = '/REPO_LIST';
+  static const String MOVIE_OVERVIEW = '/MOVIE_OVERVIEW';
 
   static final List<GetPage> routes = [
     GetPage(name: INITINAL, page: () => const SplashScreen(), binding: SplashBinding()),
-    GetPage(name: REPO_LIST, page: () => const RepositoryListScreen()),
+    GetPage(name: MOVIE_OVERVIEW, page: () => MovieOverviewScreen(), binding: MovieOverviewBindings()),
   ];
 
   static generateRoute(RouteSettings settings) {

@@ -3,14 +3,12 @@ class Assets {
   Assets._();
 
   static const String iconsDokanLogo = 'assets/icons/dokan_logo.png';
-  static const String wordpressAssignment = '.env';
-  static const String appBaseFlutter = '.env';
-  static const String appBaseFlutterShorebird = 'shorebird.yaml';
   static const String imagesNoImage = 'assets/images/no-image.png';
   static const String svgCopyIcon = 'assets/icons/svg/copy_icon.svg';
+  static const String svgIcon = 'assets/icons/svg/icon.svg';
   static const String svgLeftChevron = 'assets/icons/svg/LeftChevron.svg';
   static const String svgNav = 'assets/icons/svg/nav.svg';
   static const String svgNoData = 'assets/icons/svg/noData.svg';
   static const String svgRightChevron = 'assets/icons/svg/RightChevron.svg';
-  static const String svgShimerOne = 'assets/images/svg/shimer_one.svg';
+  static const String wordpressAssignment = '.env';
 }

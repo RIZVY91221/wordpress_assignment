@@ -1,4 +1,5 @@
 import 'package:bs_assignment/core/theme/colors.dart';
+import 'package:bs_assignment/core/uttils/icons.dart';
 import 'package:bs_assignment/di/injectable.dart';
 import 'package:bs_assignment/features/splash/controller/splash_controller.dart';
 import 'package:bs_assignment/generated/assets.dart';
@@ -21,12 +22,7 @@ class SplashScreen extends GetWidget {
           child: Column(
             children: [
               Expanded(
-                child: Center(
-                  child: Image.asset(
-                    Assets.iconsDokanLogo,
-                    width: Get.width / 2,
-                  ),
-                ),
+                child: Center(child: appSVG(Assets.svgIcon, size: MediaQuery.of(context).size.width / 2)),
               ),
             ],
           ),

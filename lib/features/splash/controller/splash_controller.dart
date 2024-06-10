@@ -14,7 +14,7 @@ class SplashController extends GetxController {
   void onInit() async {
     await repository.initBoxes(HiveConstants.INIT_BOXS);
     Timer(const Duration(milliseconds: 400), () async {
-      Get.offNamedUntil(AppRoutes.REPO_LIST, (route) => false);
+      Get.offNamedUntil(AppRoutes.MOVIE_OVERVIEW, (route) => false);
     });
     super.onInit();
   }
