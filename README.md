@@ -1,4 +1,26 @@
-# bs_assignment
+# Movie_assignment
+## APK DOWNLOAD
+
+[APK](https://github.com/RIZVY91221/wordpress_assignment/blob/movie_feature/file/app-release.apk?raw=true)
+
+## SCREEN
+[SCREEN1](https://github.com/RIZVY91221/wordpress_assignment/blob/movie_feature/file/image/screen1.jpg?raw=true)
+[SCREEN2](https://github.com/RIZVY91221/wordpress_assignment/blob/movie_feature/file/image/screen2.jpg?raw=true)
+
+<table>
+  <tr>
+     <td>Home</td>
+     <td>Details</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/RIZVY91221/wordpress_assignment/blob/movie_feature/file/image/screen1.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/RIZVY91221/wordpress_assignment/blob/movie_feature/file/image/screen2.jpg?raw=true" width=270 height=480></td>
+
+  </tr>
+ </table>
+
+
+# Movie_assignment
 
 A new Flutter project.
 
@@ -15,7 +37,7 @@ Additional Package Used
 
 ## Getting Started
 This project is a starting point for a Flutter application.
-[Repository link](https://gitlab.com/rizvyahamed91221/bs_assignment.git)
+[Repository link](https://github.com/RIZVY91221/wordpress_assignment/tree/movie_feature)
 <br>
 To get a local copy up and running follow these steps.
 #### Prerequisites
@@ -28,7 +50,7 @@ To get a local copy up and running follow these steps.
 
 1. Clone the repo
     ```sh
-    ssh: git clone https://gitlab.com/rizvyahamed91221/bs_assignment.git
+    ssh: git clone https://github.com/RIZVY91221/wordpress_assignment/tree/movie_feature
     ```
 2. Environment Setup
     - Create `.env` file cp `.env.example` to `.env `
