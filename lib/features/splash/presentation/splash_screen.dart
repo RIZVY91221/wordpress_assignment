@@ -24,7 +24,7 @@ class SplashScreen extends GetWidget {
               Expanded(
                 child: Center(
                   child: Image.asset(
-                    Assets.iconsFlutterIcon,
+                    Assets.iconsDokanLogo,
                     width: MediaQuery.of(context).size.width / 2,
                   ),
                 ),

@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 import 'package:bs_assignment/core/utils/endpoints/endpoints.dart';
 import 'package:bs_assignment/datasource/local_data_source/base_local_source.dart';
@@ -33,6 +34,10 @@ abstract class NetworkModule {
       }
       ..interceptors.add(
         InterceptorsWrapper(onRequest: (RequestOptions options, RequestInterceptorHandler handler) async {
+          if (baseLocalDataSource.accessToken != "") {
+            log(baseLocalDataSource.accessToken);
+            options.headers.putIfAbsent("Authorization", () => "Bearer ${baseLocalDataSource.accessToken}");
+          }
           handler.next(options);
         }, onError: (DioException e, ErrorInterceptorHandler handler) async {
           switch (e.type) {

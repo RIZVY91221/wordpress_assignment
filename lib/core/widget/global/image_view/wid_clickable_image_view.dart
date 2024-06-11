@@ -81,7 +81,7 @@ class WidgetClickableImageView extends StatelessWidget {
                 filterOutBefore: AppConstant.base64FilterString,
                 width: double.infinity,
                 height: (MediaQuery.of(context).size.height - 150) / 3,
-                fit: BoxFit.contain,
+                fit: BoxFit.fill,
                 onErrorDefaultPlaceholder: true,
               ),
               if (onPressedDelete != null)

@@ -31,6 +31,10 @@ class Env {
     return apiUrlDartCommand.isNotEmpty ? apiUrlDartCommand : dotenv.env["BASE_URL"] ?? "NOT FOUND";
   }
 
+  static String get TMDB_TOKEN {
+    return apiUrlDartCommand.isNotEmpty ? apiUrlDartCommand : dotenv.env["TMDB_TOKEN"] ?? "NOT FOUND";
+  }
+
   static Flavor get currentFlavor {
     Flavor flavor;
     switch (fileName) {

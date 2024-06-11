@@ -18,4 +18,6 @@ class Endpoints {
 
   //TODO: Add other settings and url endpoint here
   //static const String POST_LOGIN = "/login";
+  static const String POPULAR_MOVIE = "/movie/popular";
+  static const String POPULAR_MOVIE_DETAILS = "/movie";
 }

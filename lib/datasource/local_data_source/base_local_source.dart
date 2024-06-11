@@ -7,4 +7,7 @@ abstract class BaseLocalDataSource {
   factory BaseLocalDataSource.from() => ImplementBaseLocalDataSource();
 
   Future initBoxes(List<String> boxs);
+  String get accessToken;
+  Future<void> setAccessToken(String accessToken);
+  Future<void> logout();
 }
