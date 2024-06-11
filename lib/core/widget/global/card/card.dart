@@ -1,3 +1,4 @@
+import 'package:bs_assignment/core/theme/colors.dart';
 import 'package:bs_assignment/core/values/values.dart';
 import 'package:bs_assignment/core/widget/global/divider/wid_divider.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class BaseCard extends StatelessWidget {
       onTap: onPressCard,
       child: Card(
         elevation: 0.0,
-        color: Theme.of(context).cardColor,
+        color: AppColor.dark202125, //Theme.of(context).cardColor,
         child: AnimatedContainer(
           duration: AppDuration.milliseconds300,
           curve: Curves.easeOut,
