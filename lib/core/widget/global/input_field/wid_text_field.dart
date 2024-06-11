@@ -131,7 +131,7 @@ class _AppInputTextState extends State<AppInputText> {
     return null;
   }
 
-  Color get readOnlyBorderColor => AppColor.disabledE4E5E7;
+  Color get readOnlyBorderColor => AppColor.darkLight4D4D50;
   double get focusedBorderWidth => widget.readOnly ? 1 : 1.3;
 
   @override

@@ -1,5 +1,5 @@
+import 'package:bs_assignment/environment/environment.dart';
 import 'package:bs_assignment/repository/base_repository.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class GlobalController extends GetxController {
@@ -7,12 +7,8 @@ class GlobalController extends GetxController {
 
   GlobalController({required this.repository});
 
-
   @override
   void onInit() {
-
     super.onInit();
   }
-
-
 }

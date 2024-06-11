@@ -53,6 +53,7 @@ class PagingView<T> extends StatelessWidget {
               showNewPageProgressIndicatorAsGridChild: false,
               showNewPageErrorIndicatorAsGridChild: false,
               showNoMoreItemsIndicatorAsGridChild: false,
+              shrinkWrap: true,
               builderDelegate: PagedChildBuilderDelegate<T>(
                 firstPageProgressIndicatorBuilder: (context) => const WidgetLoadingSkeleton(
                   pageState: PageState.LOADING,
@@ -66,7 +67,7 @@ class PagingView<T> extends StatelessWidget {
                 itemBuilder: (context, item, index) => itemBuilder(context, item, index),
               ),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: 100 / 138,
+                childAspectRatio: 100 / 120,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 crossAxisCount: 2,
